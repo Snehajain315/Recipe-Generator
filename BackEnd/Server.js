@@ -3,11 +3,9 @@ import cors from "cors";
 import bodyParser from "body-parser";
 import "dotenv/config";
 
-
 const app= express();
 app.use(cors());
 app.use(bodyParser.json());
-
 
 let FoodCategory = [
     { id: 1, Category: "South Indian" },
@@ -51,9 +49,9 @@ let Dishes= [
     { id: 26, name: "Rasgulla", Category: "Desserts"},
     { id: 27, name: "Kheer", Category: "Desserts"},
     { id: 28, name: "Jalebi", Category: "Desserts"},
-    { id: 29, name: "Rabri", Category: "Desserts" }
+    { id: 29, name: "Rabri", Category: "Desserts" },
+    {id: 30, name: "Hot Chocolate", Category: "Desserts"}
 ]
-
 
 app.get("/api/category/dishes/:Category" , (req,res)=>{
     let {Category} = req.params;
@@ -61,7 +59,6 @@ app.get("/api/category/dishes/:Category" , (req,res)=>{
     let Res= Dishes.filter((e)=>e.Category===Category);
     res.json(Res);
 })
-
 
 let port= process.env.PORT || 5500;
 app.listen(port, ()=>(

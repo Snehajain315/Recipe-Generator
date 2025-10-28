@@ -1,4 +1,3 @@
-import { DumbbellIcon } from "lucide-react";
 import React, { useState,useEffect } from "react";
 import { UtensilsCrossed } from 'lucide-react';
 
@@ -14,7 +13,7 @@ export default function Recipe() {
 
     async function getCategory()
     {
-      let Res= await axios.get("http://localhost:5500/Finder")
+      let Res= await axios.get("https://recipe-generator-2-3dyc.onrender.com/Finder")
       setCategoryData(Res.data)
     }
     getCategory();

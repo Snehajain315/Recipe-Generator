@@ -16,7 +16,7 @@ export default function Dishes()
    useEffect(()=>{
     async function getDishes()
     {
-        let Res= await axios.get(`http://localhost:5500/api/category/dishes/${Category}`)
+        let Res= await axios.get(`https://recipe-generator-2-3dyc.onrender.com/api/category/dishes/${Category}`)
         setDishesData(Res.data);
     }
     getDishes();
